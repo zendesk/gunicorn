@@ -96,7 +96,7 @@ class GeventWorker(AsyncWorker):
             if self.server_class is not None:
                 environ = base_environ(self.cfg)
                 environ.update({
-                    "wsgi.multithread": True,
+                    "wsgi.multithread": False,
                     "SERVER_SOFTWARE": VERSION,
                 })
                 server = self.server_class(
