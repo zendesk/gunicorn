@@ -36,11 +36,11 @@ class Message(object):
         self.body = None
 
         # set headers limits
-        self.limit_request_fields = cfg.limit_request_fields
+        self.limit_request_fields = MAX_HEADERS
         if (self.limit_request_fields <= 0
             or self.limit_request_fields > MAX_HEADERS):
             self.limit_request_fields = MAX_HEADERS
-        self.limit_request_field_size = cfg.limit_request_field_size
+        self.limit_request_field_size = MAX_HEADERFIELD_SIZE
         if (self.limit_request_field_size < 0
             or self.limit_request_field_size > MAX_HEADERFIELD_SIZE):
             self.limit_request_field_size = MAX_HEADERFIELD_SIZE
